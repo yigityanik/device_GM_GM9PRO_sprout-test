@@ -91,6 +91,9 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
