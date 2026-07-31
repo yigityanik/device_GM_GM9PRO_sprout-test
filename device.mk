@@ -304,6 +304,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.zram.rc \
     init.hardware.rc \
+    init.cgroup.custom.rc \
     fstab.qcom \
     fstab.qcom.ramdisk \
     init.recovery.qcom.rc \
