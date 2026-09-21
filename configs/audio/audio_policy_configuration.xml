@@ -17,7 +17,7 @@
      limitations under the License.
 -->
 
-<audioPolicyConfiguration version="7.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<audioPolicyConfiguration version="6.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <!-- version section contains a “version” tag in the form “major.minor” e.g version=”1.0” -->
 
     <!-- Global configuration Decalaration -->
@@ -330,7 +330,7 @@
         </module>
 
         <!-- A2DP Input Audio HAL -->
-        <xi:include href="/vendor/etc/a2dp_in_audio_policy_configuration_7_0.xml"/>
+        <xi:include href="/vendor/etc/a2dp_in_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
         <module name="usb" halVersion="2.0">
@@ -356,7 +356,7 @@
         <xi:include href="/vendor/etc/r_submix_audio_policy_configuration.xml"/>
 
         <!-- Bluetooth Audio HAL -->
-        <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration_7_0.xml"/>
+        <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration.xml"/>
 
     </modules>
     <!-- End of Modules section -->
