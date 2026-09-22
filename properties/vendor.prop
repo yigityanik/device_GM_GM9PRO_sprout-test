@@ -163,3 +163,13 @@ ro.build.shutdown_timeout=0
 # SoC
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SDM660
+
+# Go defaults
+ro.config.low_ram=false
+pm.dexopt.downgrade_after_inactive_days=10
+pm.dexopt.shared=quicken
+ro.lmk.critical_upgrade=true
+ro.lmk.upgrade_pressure=40
+ro.lmk.downgrade_pressure=60
+ro.lmk.kill_heaviest_task=false
+ro.statsd.enable=false
