@@ -105,7 +105,7 @@ PRODUCT_COPY_FILES += \
 
 # DeviceDoze
 PRODUCT_PACKAGES += \
-    DeviceDoze
+    Doze
 
 # DRM
 PRODUCT_PACKAGES += \
