@@ -1,0 +1,6 @@
+set_prop(netmgrd, system_prop)
+#Allow set persist.vendor.data.shs_ko_load
+#Allow set persist.vendor.data.shsusr_load
+#Allow set persist.vendor.data.perf_ko_load
+#Allow set persist.vendor.data.qmipriod_load
+set_prop(netmgrd, vendor_default_prop)
