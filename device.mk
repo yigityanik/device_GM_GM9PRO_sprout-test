@@ -321,8 +321,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.msm.usb.configfs.rc \
     init.qcom.usb.sh \
-    ueventd.qcom.rc \
-    init.logger.rc
+    ueventd.qcom.rc
 
 # Seccomp
 PRODUCT_COPY_FILES += \
