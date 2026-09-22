@@ -95,6 +95,8 @@ ro.vendor.bluetooth.wipower=false
 
 # Blur
 persist.sys.sf.disable_blurs=1
+ro.sf.blurs_are_expensive=1
+ro.surface_flinger.supports_background_blur=0
 
 # Camera
 persist.vendor.camera.HAL3.enabled=1
@@ -120,6 +122,14 @@ media.mediadrmservice.enable=true
 ro.hardware.vulkan=adreno
 ro.hardware.egl=adreno
 ro.opengles.version=196610
+debug.sf.early_app_phase_offset_ns=1500000
+debug.sf.early_gl_app_phase_offset_ns=15000000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.sf.early_phase_offset_ns=1500000
+ro.surface_flinger.vsync_event_phase_offset_ns=5000000
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=7500000
+ro.surface_flinger.vsync_event_phase_offset_ns=2000000
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
 # Factory Reset Protection
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
