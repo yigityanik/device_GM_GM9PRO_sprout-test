@@ -150,6 +150,7 @@ persist.vendor.radio.mt_sms_ack=30
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.procedure_bytes=SKIP
 ro.telephony.block_binder_thread_on_incoming_calls=false
+ro.telephony.default_network=9,0
 
 # Sensors
 ro.vendor.sensors.facing=false
