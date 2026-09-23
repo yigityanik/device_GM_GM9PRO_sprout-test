@@ -8,8 +8,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AndroidOneExperience stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+## Android One Experience required flags
+# if your build is ready to release:
+#CUSTOM_BUILD_TYPE := release
+PRODUCT_CUSTOM_MODEL := 9PR
 
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -17,13 +22,10 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := GM
 PRODUCT_DEVICE := GM9PRO_sprout
 PRODUCT_MANUFACTURER := General Mobile
-PRODUCT_NAME := lineage_GM9PRO_sprout
+PRODUCT_NAME := aosp_GM9PRO_sprout
 PRODUCT_MODEL := GM 9 Pro
-
-PRODUCT_GMS_CLIENTID_BASE := android-gm
 TARGET_VENDOR := GM
 TARGET_VENDOR_PRODUCT_NAME := GM9PRO_sprout
-PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="gm9pro-user 9 PKQ1.180904.001 315 release-keys"
 
-BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.092/224:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	PRIVATE_BUILD_DESC="gm9pro-user 8.1.0 OPM1.171019.019 55 release-keys"

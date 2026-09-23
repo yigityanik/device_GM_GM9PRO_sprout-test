@@ -125,3 +125,5 @@ persist.chg.max_volt_mv=9000
 
 #system prop for Bluetooth SOC type
 vendor.bluetooth.soc=cherokee
+
+androidone.experience.device.version=R.9PR.0923-TESTING
