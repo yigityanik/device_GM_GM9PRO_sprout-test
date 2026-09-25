@@ -314,10 +314,9 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.class_main.sh \
-    init.qcom.post_boot.sh \
     init.target.rc \
     init.zram.rc \
-    init.power.rc \
+    init.hardware.rc \
     fstab.qcom \
     init.recovery.qcom.rc \
     init.qcom.usb.rc \
