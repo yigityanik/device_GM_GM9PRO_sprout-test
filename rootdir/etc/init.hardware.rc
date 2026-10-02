@@ -25,10 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on early-init
-    # Enable sched_boost during boot
-    write /proc/sys/kernel/sched_boost 1
-
 on init
     # Set the default IRQ affinity to the primary cluster
     write /proc/irq/default_smp_affinity f
@@ -80,21 +76,18 @@ on init
 
     # enable LPM
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
+	
+    # Set boottime stune value
+    write /dev/stune/schedtune.prefer_idle 1
+    write /dev/stune/schedtune.boost 100
 
-    # re-enable thermal and BCL hotplug
-    write /sys/module/msm_thermal/core_control/enabled 1
-
-    # set default schedtune value for foreground/top-app
+    # set default schedTune value for foreground/top-app
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
-    # Boot time cpuset and stune
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/background/cpus 0-5
-    write /dev/cpuset/system-background/cpus 0-5
-    write /dev/cpuset/restricted/cpus 2-5
+    # Re-enable thermal/BCL core control
+    write /sys/module/msm_thermal/core_control/enabled 1
 
 on late-init
     # Enable bus-dcvs
@@ -125,8 +118,9 @@ on late-init
     setprop vendor.post_boot.parsed 1
 
 on property:sys.boot_completed=1
-    # Disable sched_boost
-    write /proc/sys/kernel/sched_boost 0
+    # Set runtime stune value
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.boost 0
 
 	# Libperfmgr hint processing
     setprop vendor.powerhal.init 1
@@ -134,3 +128,10 @@ on property:sys.boot_completed=1
     # Enable iowait_boost
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/iowait_boost_enable 1
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/iowait_boost_enable 1
+
+    # Setup cpusets
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-5,7
+    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 2-5
