@@ -297,15 +297,13 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.class_main.sh \
-    init.qcom.post_boot.sh \
     init.target.rc \
     fstab.qcom \
     init.recovery.qcom.rc \
     init.qcom.usb.rc \
     init.msm.usb.configfs.rc \
     init.qcom.usb.sh \
-    ueventd.qcom.rc \
-    init.logger.rc
+    ueventd.qcom.rc
 
 # Seccomp
 PRODUCT_COPY_FILES += \
