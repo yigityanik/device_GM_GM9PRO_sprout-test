@@ -73,6 +73,14 @@ vendor.audio.feature.wsa.enable=false
 vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.snd_mon.enable=true
 
+# Enabling ADB
+ro.secure=0
+ro.adb.secure=0
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+sys.usb.configfs=0
+
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
 bluetooth.hardware.power.operating_voltage_mv=3300
