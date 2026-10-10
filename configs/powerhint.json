@@ -61,7 +61,7 @@
         "266000000",
         "160000000"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 3,
       "ResetOnInit": true
     },
     {
@@ -178,6 +178,15 @@
         ""
       ],
       "Type": "Property"
+    },
+    {
+      "Name": "GPUGovernor",
+      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/governor",
+      "Values": [
+        "performance"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -329,6 +338,30 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMaxFreq",
       "Duration": 0,
+      "Value": "647000000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "465000000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "465000000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUMaxFreq",
+      "Duration": 5000,
+      "Value": "647000000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUMinFreq",
+      "Duration": 5000,
       "Value": "647000000"
     }
   ]

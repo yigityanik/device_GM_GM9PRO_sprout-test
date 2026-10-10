@@ -141,7 +141,3 @@ on init
     chown system system /dev/cpuset/system/performance/cgroup.procs
     chmod 0664 /dev/cpuset/system/performance/tasks
     chmod 0664 /dev/cpuset/system/performance/cgroup.procs
-
-on init
-    mkdir /dev/memcg/apps 0755 system system
-    write /dev/memcg/apps/memory.swappiness 60
