@@ -75,7 +75,8 @@
         "266000000",
         "160000000"
       ],
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "DefaultIndex": 3
     },
     {
       "Name": "GPUForceRailOn",
@@ -208,13 +209,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 1000,
-      "Value": "1113600"
+      "Value": "1536000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 1000,
-      "Value": "1401600"
+      "Value": "1747200"
     },
     {
       "PowerHint": "INTERACTION",
