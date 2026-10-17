@@ -89,13 +89,6 @@ on init
     write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
-    # Boot time cpuset and stune
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/background/cpus 0-5
-    write /dev/cpuset/system-background/cpus 0-5
-    write /dev/cpuset/restricted/cpus 2-5
-
 on late-init
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor bw_hwmon
@@ -125,8 +118,9 @@ on late-init
     setprop vendor.post_boot.parsed 1
 
 on property:sys.boot_completed=1
-    # Disable sched_boost
-    write /proc/sys/kernel/sched_boost 0
+    # Set runtime stune value
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.boost 0
 
 	# Libperfmgr hint processing
     setprop vendor.powerhal.init 1
@@ -134,3 +128,10 @@ on property:sys.boot_completed=1
     # Enable iowait_boost
     write /sys/devices/system/cpu/cpufreq/policy0/schedutil/iowait_boost_enable 1
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/iowait_boost_enable 1
+
+    # Setup cpusets
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
